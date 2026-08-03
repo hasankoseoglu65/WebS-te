@@ -1,0 +1,212 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',Arial,sans-serif; background:#f4f4fb; color:#222; }
+
+/* Üst şerit */
+.topbar {
+  background:linear-gradient(90deg,#6a3de8,#8b5cf6);
+  color:#fff; display:flex; justify-content:center; gap:40px;
+  padding:8px 15px; font-size:13px; flex-wrap:wrap;
+}
+
+/* Header */
+.header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:15px 25px; background:#fff; gap:20px; flex-wrap:wrap;
+}
+.logo { font-size:28px; font-weight:bold; color:#1a1a2e; }
+.logo span { color:#ec4899; }
+.search-box { flex:1; display:flex; min-width:200px; max-width:600px; }
+.search-box input {
+  flex:1; padding:12px 15px; border:2px solid #eee;
+  border-radius:25px 0 0 25px; outline:none; font-size:14px;
+}
+.search-box button {
+  background:#ec4899; color:#fff; border:none; padding:0 20px;
+  border-radius:0 25px 25px 0; cursor:pointer; font-size:16px;
+}
+.header-icons { display:flex; gap:20px; }
+.icon-item {
+  display:flex; flex-direction:column; align-items:center;
+  font-size:20px; cursor:pointer; position:relative;
+}
+.icon-item small { font-size:11px; color:#555; }
+.badge {
+  position:absolute; top:-5px; right:-5px; background:#ec4899;
+  color:#fff; border-radius:50%; width:18px; height:18px;
+  font-size:11px; display:flex; align-items:center; justify-content:center;
+}
+
+/* Menü */
+.menu {
+  display:flex; gap:25px; padding:12px 25px; background:#fff;
+  border-top:1px solid #eee; overflow-x:auto;
+}
+.menu a {
+  text-decoration:none; color:#333; font-size:14px;
+  white-space:nowrap; padding:5px 0; font-weight:500;
+}
+.menu a.active { color:#ec4899; border-bottom:2px solid #ec4899; }
+
+/* Hero */
+.hero {
+  margin:20px; border-radius:20px; padding:60px 40px;
+  background:linear-gradient(120deg,#7c3aed,#ec4899);
+  color:#fff;
+}
+.hero-text h1 { font-size:48px; line-height:1.1; }
+.hero-text h1 span { color:#fbbf24; }
+.hero-text p { margin:15px 0 25px; font-size:18px; }
+.btn {
+  display:inline-block; background:#ec4899; color:#fff;
+  padding:14px 30px; border-radius:30px; text-decoration:none;
+  font-weight:bold; border:none; cursor:pointer; font-size:15px;
+}
+.btn.full { width:100%; margin-top:15px; }
+
+/* Avantajlar */
+.features {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:15px;
+  padding:0 20px; margin-bottom:30px;
+}
+.feature {
+  background:#fff; padding:20px; border-radius:12px;
+  display:flex; align-items:center; gap:12px; font-size:13px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+.fi { font-size:26px; }
+
+/* Bölümler */
+.section { padding:20px; }
+.section h2 { margin-bottom:20px; color:#1a1a2e; }
+
+/* Kategori */
+.kategori-grid {
+  display:grid; grid-template-columns:repeat(6,1fr); gap:15px;
+}
+.kategori-card {
+  border-radius:15px; padding:25px 10px; text-align:center;
+  color:#fff; font-weight:bold; cursor:pointer; font-size:14px;
+}
+
+/* Ürün */
+.urun-grid {
+  display:grid; grid-template-columns:repeat(5,1fr); gap:18px;
+}
+.urun-card {
+  background:#fff; border-radius:15px; padding:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06); text-align:center;
+}
+.urun-gorsel {
+  position:relative; width:100%; height:150px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; margin-bottom:12px;
+  overflow:hidden;
+}
+.urun-emoji { font-size:75px; }
+.rozet {
+  position:absolute; top:8px; left:8px; background:#ec4899; color:#fff;
+  font-size:10px; font-weight:bold; padding:4px 8px; border-radius:20px;
+}
+.urun-card h4 { font-size:14px; margin-bottom:8px; min-height:38px; }
+.fiyat { color:#ec4899; font-weight:bold; font-size:18px; }
+.puan { color:#f59e0b; font-size:12px; margin:5px 0; }
+.urun-card button {
+  background:#ec4899; color:#fff; border:none; padding:10px;
+  border-radius:8px; width:100%; cursor:pointer; margin-top:8px;
+}
+
+/* Footer */
+.footer {
+  background:#1a1a2e; color:#fff; padding:30px;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+  text-align:center; font-size:13px; margin-top:30px;
+}
+.footer small { color:#aaa; }
+.copyright { grid-column:1/-1; margin-top:20px; color:#888; font-size:12px; }
+
+/* Sepet */
+.sepet-panel {
+  position:fixed; top:0; right:-400px; width:350px; height:100%;
+  background:#fff; box-shadow:-5px 0 20px rgba(0,0,0,.2);
+  padding:20px; transition:right .3s; z-index:1000; overflow-y:auto;
+}
+.sepet-panel.acik { right:0; }
+.sepet-header { display:flex; justify-content:space-between; margin-bottom:20px; }
+.sepet-header button { background:none; border:none; font-size:20px; cursor:pointer; }
+.sepet-urun {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 0; border-bottom:1px solid #eee; font-size:14px;
+}
+.sepet-urun button { background:#ef4444; color:#fff; border:none; border-radius:5px; padding:4px 8px; cursor:pointer; }
+.sepet-toplam { margin:20px 0 10px; font-weight:bold; font-size:18px; }
+.overlay {
+  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,.5); z-index:999;
+}
+.overlay.acik { display:block; }
+
+/* ===== TELEFON UYUMU ===== */
+@media (max-width:900px) {
+  .features { grid-template-columns:repeat(2,1fr); }
+  .kategori-grid { grid-template-columns:repeat(3,1fr); }
+  .urun-grid { grid-template-columns:repeat(2,1fr); }
+  .footer { grid-template-columns:repeat(2,1fr); }
+  .hero-text h1 { font-size:32px; }
+}
+@media (max-width:600px) {
+  .header { flex-direction:column; }
+  .header-icons { gap:25px; }
+  .topbar { gap:15px; font-size:11px; }
+  .kategori-grid { grid-template-columns:repeat(2,1fr); }
+  .hero { padding:40px 20px; margin:10px; }
+  .hero-text h1 { font-size:28px; }
+}
+
+/* Bölüm başlığı + rastgele buton */
+.bolum-bas {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:20px; flex-wrap:wrap; gap:10px;
+}
+.rastgele-btn {
+  background:linear-gradient(90deg,#7c3aed,#ec4899); color:#fff; border:none;
+  padding:11px 20px; border-radius:25px; cursor:pointer; font-weight:bold; font-size:14px;
+}
+
+/* Sepet mini görsel */
+.sepet-mini {
+  width:45px; height:45px; border-radius:8px; display:flex;
+  align-items:center; justify-content:center; font-size:24px; flex-shrink:0;
+}
+.sepet-urun { gap:10px; }
+
+/* Hesap modalı */
+.hesap-modal {
+  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,.6); z-index:2000; align-items:center; justify-content:center; padding:20px;
+}
+.hesap-modal.acik { display:flex; }
+.hesap-kutu {
+  background:#fff; padding:35px 30px; border-radius:18px; width:100%; max-width:400px;
+  position:relative; box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+.hesap-kapat {
+  position:absolute; top:15px; right:15px; background:none; border:none;
+  font-size:20px; cursor:pointer; color:#999;
+}
+.hesap-logo { text-align:center; font-size:26px; font-weight:bold; color:#1a1a2e; margin-bottom:20px; }
+.hesap-logo span { color:#ec4899; }
+.hesap-tab { display:flex; gap:10px; margin-bottom:20px; }
+.tab-btn {
+  flex:1; padding:12px; border:none; background:#f4f4fb; border-radius:10px;
+  cursor:pointer; font-weight:600; color:#666;
+}
+.tab-btn.aktif { background:#ec4899; color:#fff; }
+.hesap-kutu input {
+  width:100%; padding:13px; margin-bottom:12px; border:2px solid #eee;
+  border-radius:10px; font-size:14px; outline:none;
+}
+.hesap-kutu input:focus { border-color:#ec4899; }
+.hesap-btn {
+  width:100%; padding:14px; background:#ec4899; color:#fff; border:none;
+  border-radius:10px; cursor:pointer; font-weight:bold; font-size:15px; margin-top:5px;
+}
+.hesap-alt { text-align:center; color:#999; font-size:12px; margin-top:15px; cursor:pointer; }

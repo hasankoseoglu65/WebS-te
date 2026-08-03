@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToysShop - Hayal Gücüne Oyna!</title>
+<meta name="description" content="TikTok'ta viral olan en eğlenceli ürünler yurtdışından Türkiye'ye ucuz ve güvenli!">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Üst şerit -->
+<div class="topbar">
+  <span>🚚 750 TL ve Üzeri Kargo Ücretsiz!</span>
+  <span>⚡ Aynı Gün Kargo Fırsatı!</span>
+  <span>✨ Yeni Ürünler Her Hafta!</span>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="logo">Toys<span>Shop</span></div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Ürün, kategori veya marka ara...">
+    <button onclick="aramaYap()">🔍</button>
+  </div>
+  <div class="header-icons">
+    <div class="icon-item" onclick="hesapAc()">👤<small>Hesabım</small></div>
+    <div class="icon-item">❤️<small>Favoriler</small></div>
+    <div class="icon-item" onclick="sepetiAc()">🛒<span class="badge" id="sepetSayi">0</span><small>Sepetim</small></div>
+  </div>
+</header>
+
+<!-- Menü -->
+<nav class="menu">
+  <a href="#" class="active">🏠 Ana Sayfa</a>
+  <a href="#trend">⚡ Trend Ürünler</a>
+  <a href="#kategoriler">📦 Kategoriler</a>
+  <a href="#urunler">✨ Yeni Ürünler</a>
+  <a href="#cok-satan">⭐ Çok Satanlar</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hayal Gücüne <span>Oyna!</span></h1>
+    <p>TikTok'ta viral olan en eğlenceli ürünler ToysShop'ta!</p>
+    <a href="#urunler" class="btn">Alışverişe Başla →</a>
+  </div>
+</section>
+
+<!-- Avantajlar -->
+<section class="features">
+  <div class="feature"><div class="fi">🚚</div><div><strong>750 TL ve Üzeri</strong><br>Kargo Ücretsiz</div></div>
+  <div class="feature"><div class="fi">⚡</div><div><strong>Aynı Gün Kargo</strong><br>Hafta içi 15:00'a kadar</div></div>
+  <div class="feature"><div class="fi">🛡️</div><div><strong>Güvenli Alışveriş</strong><br>256 Bit SSL ile koruma</div></div>
+  <div class="feature"><div class="fi">🔄</div><div><strong>Kolay İade</strong><br>14 gün içinde iade</div></div>
+</section>
+
+<!-- Kategoriler -->
+<section id="kategoriler" class="section">
+  <h2>Popüler Kategoriler</h2>
+  <div class="kategori-grid" id="kategoriGrid"></div>
+</section>
+
+<!-- Ürünler -->
+<section id="urunler" class="section">
+  <div class="bolum-bas">
+    <h2>Çok Satanlar 🔥</h2>
+    <button class="rastgele-btn" onclick="rastgeleEkle()">🎲 Şansımı Dene (Rastgele Ekle)</button>
+  </div>
+  <div class="urun-grid" id="urunGrid"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-item">🛡️ Güvenli Alışveriş<br><small>256 Bit SSL</small></div>
+  <div class="footer-item">🚚 Hızlı Kargo<br><small>Aynı gün kargo</small></div>
+  <div class="footer-item">🔄 Kolay İade<br><small>14 gün içinde</small></div>
+  <div class="footer-item">📞 Müşteri Desteği<br><small>7/24 yanınızda</small></div>
+  <p class="copyright">© 2026 ToysShop — TikTok viral ürünleri güvenle Türkiye'ye</p>
+</footer>
+
+<!-- Hesap Aç / Giriş modalı (sadece görünüm, çalışmaz) -->
+<div class="hesap-modal" id="hesapModal">
+  <div class="hesap-kutu">
+    <button class="hesap-kapat" onclick="hesapKapat()">✕</button>
+    <div class="hesap-logo">Toys<span>Shop</span></div>
+
+    <div class="hesap-tab">
+      <button class="tab-btn aktif" onclick="hesapTab('giris')" id="tabGiris">Giriş Yap</button>
+      <button class="tab-btn" onclick="hesapTab('kayit')" id="tabKayit">Hesap Aç</button>
+    </div>
+
+    <!-- Giriş formu -->
+    <div id="girisForm">
+      <input type="email" placeholder="E-posta adresin">
+      <input type="password" placeholder="Şifren">
+      <button class="hesap-btn">Giriş Yap</button>
+      <p class="hesap-alt">Şifreni mi unuttun?</p>
+    </div>
+
+    <!-- Kayıt formu -->
+    <div id="kayitForm" style="display:none">
+      <input type="text" placeholder="Ad Soyad">
+      <input type="email" placeholder="E-posta adresin">
+      <input type="tel" placeholder="Telefon numaran">
+      <input type="password" placeholder="Şifre belirle">
+      <button class="hesap-btn">Hesap Oluştur</button>
+      <p class="hesap-alt">Hesap açarak kullanım koşullarını kabul edersin.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Sepet paneli -->
+<div class="sepet-panel" id="sepetPanel">
+  <div class="sepet-header">
+    <h3>Sepetim</h3>
+    <button onclick="sepetiKapat()">✕</button>
+  </div>
+  <div id="sepetIcerik"></div>
+  <div class="sepet-toplam">Toplam: <span id="sepetToplam">0</span> TL</div>
+  <button class="btn full">Alışverişi Tamamla</button>
+</div>
+<div class="overlay" id="overlay" onclick="sepetiKapat()"></div>
+
+<script src="urunler.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
